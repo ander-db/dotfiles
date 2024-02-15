@@ -1,5 +1,5 @@
 
-# My Neovim Configuration 
+# My Neovim + Tmux Configuration 
 Welcome to my personal Neovim configuration repository. This setup is tailored to my development needs and preferences, building upon the powerful and flexible foundations provided by NvChad and enhanced by the intelligent assistance of GitHub Copilot. 
 
 ## Based On  
