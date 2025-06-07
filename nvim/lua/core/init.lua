@@ -27,6 +27,9 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
+opt.scrolloff = 5
+opt.colorcolumn = "80"
+
 -- Numbers
 opt.number = true
 opt.relativenumber = true
