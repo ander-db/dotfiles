@@ -207,8 +207,8 @@ M.lspconfig = {
 
     ["<leader>f"] = {
       function()
-        vim.lsp.buf.format { async = false }
-      end,
+        require("conform").format { lsp_fallback = true, async = false, timeout_ms = 500, }
+       end,
       "LSP formatting",
     },
 

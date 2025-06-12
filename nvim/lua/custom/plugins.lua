@@ -20,19 +20,32 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
---    dependencies = {
---      -- format & linting
---      {
---        "jose-elias-alvarez/null-ls.nvim",
---        config = function()
---          require "custom.configs.null-ls"
---        end,
---      },
---    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
+  },
+
+  -- 2. Conform: El nuevo plugin para FORMATEO
+  {
+    'stevearc/conform.nvim',
+    event = { "BufWritePre" }, -- Se activa antes de guardar un buffer
+    cmd = { "ConformInfo" },
+    config = function()
+      -- Mueve la configuración a un archivo separado para mantener el orden
+      require "custom.configs.conform"
+    end,
+  },
+
+  -- 3. None-ls: El reemplazo para LINTING (si lo necesitas)
+  {
+    "nvimtools/none-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      -- Mueve la configuración a un archivo separado
+      require "custom.configs.none-ls"
+    end,
   },
 
   -- override plugin configs

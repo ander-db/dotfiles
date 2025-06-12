@@ -30,7 +30,7 @@ M.treesitter = {
     "markdown_inline",
     "go",
     "python",
-    "terraform"
+    "terraform",
   },
   indent = {
     enable = true,
@@ -58,7 +58,8 @@ M.mason = {
     "clang-format",
 
     -- python
-    "pyright"
+    "pyright",
+    "black",
   },
 }
 
